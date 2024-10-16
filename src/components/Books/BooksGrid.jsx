@@ -98,13 +98,13 @@ const BooksGrid = ({searchTerm, sortBy}) => {
               key={book.id}
               id={book.id}
               name={book.title}
+              bookObj={book}
               author={book.authors.map((author) => author.name).join(', ')}
               thumbnail={book.formats['image/jpeg']}
               genre={book.subjects ? book.subjects.join(', ') : 'Unknown'}
             />
           ))}
-      </div><img src="/loading-animations-preloader.gif" alt="Loading Books..." />
-
+      </div> 
       {/* Pagination Controls */}
       <div className="flex justify-center space-x-2 mt-4">
         {/* Previous Button */}

@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const BooksGridItem = ({ id, name, author, thumbnail, genre }) => {
+const BooksGridItem = ({ id, name, author, thumbnail, genre, bookObj }) => {
   const [favourite, setFavourite] = useState(false);
+  const navigate = useNavigate()
 
   useEffect(() => {
     // Check if the item is already in the wishlist
@@ -24,13 +26,17 @@ const BooksGridItem = ({ id, name, author, thumbnail, genre }) => {
     }
   };
 
+  const gotoBooksDetails = ()=>{
+navigate("/book-details", {state:{bookObj}})
+  }
+
   return (
     <div className="transition-shadow duration-300 shadow-custom hover:shadow-customHover p-4 rounded-md  flex flex-col justify-start items-stretch gap-4">
-      <div className="h-64 flex items-center justify-center rounded-md border border-[#324251]/30   p-6 overflow-hidden bg-blue-200 group  cursor-pointer">
+      <div  onClick={gotoBooksDetails} className="h-64 flex items-center justify-center rounded-md border border-[#324251]/30   p-6 overflow-hidden bg-blue-200 group  cursor-pointer">
         <img className="max-w-[144px] hover:scale-110 group-hover:scale-110 transition-transform duration-500 ease-in-out" src={thumbnail} alt={name} />
       </div>
 
-      <div className=" flex flex-col flex-grow ">
+      <div onClick={gotoBooksDetails} className=" flex flex-col flex-grow   cursor-pointer">
         <div className='flex flex-col justify-end  '>
             <h4 className="text-lg font-bold lg:text-xl min-h-14 text-blue-700">{name}</h4>
             <div className="flex justify-between items-center">
