@@ -84,7 +84,7 @@ const BooksGrid = ({searchTerm, sortBy}) => {
   };
 
   if (loading) {
-    return <p>Loading books...</p>;
+    return <div className='w-full flex justify-center bg-[#1f6dc7]' ><img src="/loading-animations-preloader.gif" alt="Loading Books..." /></div>;
   }
 
   return (
@@ -103,7 +103,7 @@ const BooksGrid = ({searchTerm, sortBy}) => {
               genre={book.subjects ? book.subjects.join(', ') : 'Unknown'}
             />
           ))}
-      </div>
+      </div><img src="/loading-animations-preloader.gif" alt="Loading Books..." />
 
       {/* Pagination Controls */}
       <div className="flex justify-center space-x-2 mt-4">
