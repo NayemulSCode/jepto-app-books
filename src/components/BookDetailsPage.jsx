@@ -11,15 +11,15 @@ const BookDetailsPage = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gray-400   px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto bg-gray-400 shadow-lg rounded-lg overflow-hidden">
+    <div className="min-h-screen bg-gray-400 py-6  px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto bg-white py-4 shadow-lg rounded-lg overflow-hidden">
         <div className="lg:flex">
           {/* Book Cover Section */}
-          <div className="lg:w-1/3 relative md:py-10 py-3 md:px-6 px-2 flex justify-center flex-col overflow-hidden">
+          <div className="lg:w-1/3 relative md:py-10 py-3 md:px-6 px-2 flex justify-center items-center  overflow-hidden">
             <img 
               src={book.formats["image/jpeg"]} 
               alt={book.title} 
-              className="object-cover w-full   rounded-lg   lg:rounded-lg transition-transform duration-500 hover:scale-105"
+              className="object-cover w-[65%] shadow-2xl  rounded-lg   lg:rounded-lg transition-transform duration-500 hover:scale-105"
             />
           </div>
 
@@ -34,10 +34,10 @@ const BookDetailsPage = () => {
             <p className="mt-2 text-lg text-gray-600">
               By: {book.authors[0].name} ({book.authors[0].birth_year} - {book.authors[0].death_year})
             </p>
-<div className='flex justify-between w-full'>
+<div className='flex justify-between items-start lg:flex-row flex-col w-full gap-4'>
 
             {/* Book Details */}
-            <div className="mt-4">
+            <div className="mt-6 flex-1 ">
               <h2 className="text-xl font-semibold text-gray-700">Subjects:</h2>
               <ul className="list-disc pl-5 text-gray-600 mt-2">
                 {book.subjects.map((subject, index) => (
@@ -46,7 +46,7 @@ const BookDetailsPage = () => {
               </ul>
             </div>
 
-            <div className="mt-4">
+            <div className="mt-6 flex-1 ">
               <h2 className="text-xl font-semibold text-gray-700">Bookshelves:</h2>
               <ul className="list-disc pl-5 text-gray-600 mt-2">
                 {book.bookshelves.map((shelf, index) => (
@@ -54,10 +54,8 @@ const BookDetailsPage = () => {
                 ))}
               </ul>
             </div>
-</div>
-
             {/* Download Formats */}
-            <div className="mt-6">
+            <div className="mt-6 flex-1 ">
               <h2 className="text-xl font-semibold text-gray-700">Available Formats:</h2>
               <ul className="list-disc pl-5 text-blue-500 mt-2">
                 {Object.keys(book.formats).map((format, index) => (
@@ -69,6 +67,8 @@ const BookDetailsPage = () => {
                 ))}
               </ul>
             </div>
+</div>
+
 
             {/* Download Count */}
             <p className="mt-6 text-gray-600">
