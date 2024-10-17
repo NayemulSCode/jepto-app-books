@@ -11,11 +11,11 @@ const BookDetailsPage = () => {
   };
   
   return (
-    <div className="min-h-screen bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+    <div className="min-h-screen bg-gray-400   px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto bg-gray-400 shadow-lg rounded-lg overflow-hidden">
         <div className="lg:flex">
           {/* Book Cover Section */}
-          <div className="lg:w-1/3 relative py-10 px-6 flex justify-center flex-col">
+          <div className="lg:w-1/3 relative md:py-10 py-3 md:px-6 px-2 flex justify-center flex-col overflow-hidden">
             <img 
               src={book.formats["image/jpeg"]} 
               alt={book.title} 
@@ -24,16 +24,12 @@ const BookDetailsPage = () => {
           </div>
 
           {/* Book Info Section */}
-          <div className="lg:w-2/3 p-8">
+          <div className="lg:w-2/3 md:p-8 p-2">
           <div className='flex justify-between items-center'>
 
             <h1 className="text-3xl font-bold text-gray-800">{book.title}</h1> 
-             <button 
-            onClick={handleBackClick}
-            className="text-blue-500 hover:underline"
-            >
-            &larr; Back
-          </button>
+         
+         
             </div>
             <p className="mt-2 text-lg text-gray-600">
               By: {book.authors[0].name} ({book.authors[0].birth_year} - {book.authors[0].death_year})

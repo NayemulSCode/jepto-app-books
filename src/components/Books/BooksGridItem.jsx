@@ -24,6 +24,7 @@ const BooksGridItem = ({ id, name, author, thumbnail, genre, bookObj }) => {
       localStorage.setItem('wishlist', JSON.stringify(wishlist));
       setFavourite(true);
     }
+    window.dispatchEvent(new Event("wishlist"))
   };
 
   const gotoBooksDetails = ()=>{
@@ -36,8 +37,8 @@ navigate("/book-details", {state:{bookObj}})
         <img className="max-w-[144px] hover:scale-110 group-hover:scale-110 transition-transform duration-500 ease-in-out" src={thumbnail} alt={name} />
       </div>
 
-      <div onClick={gotoBooksDetails} className=" flex flex-col flex-grow   cursor-pointer">
-        <div className='flex flex-col justify-end  '>
+      <div className=" flex flex-col flex-grow   cursor-pointer">
+        <div  onClick={gotoBooksDetails}  className='flex flex-col justify-end  '>
             <h4 className="text-lg font-bold lg:text-xl min-h-14 text-blue-700  ">{name}</h4>
             <div className="flex justify-between items-start ">
               <p className="text-xs lg:text-sm min-h-12">By : <span className='font-medium '>{author}</span></p>
