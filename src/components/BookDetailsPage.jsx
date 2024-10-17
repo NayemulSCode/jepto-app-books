@@ -1,5 +1,5 @@
 import React from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 const BookDetailsPage = () => {
   const location = useLocation()
@@ -7,12 +7,18 @@ const BookDetailsPage = () => {
   const book = location.state.bookObj;
   console.log(book)
    const handleBackClick = () => {
-    navigate(-1); // Navigate back to the previous page
+    navigate(-1);
   };
   
   return (
     <div className="min-h-screen bg-gray-400 py-6  px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto bg-white py-4 shadow-lg rounded-lg overflow-hidden">
+      <button className={`flex min-w-[80px] items-center justify-center gap-1 rounded-md transition-all ml-5 py-1.5 lg:py-2 bg-[#1C4336]/[14%] text-[#1C4336] hover:bg-[#1C4336]/[24%]`}
+       onClick={handleBackClick}>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 19L8 12L15 5" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+        Back</button>
         <div className="lg:flex">
           {/* Book Cover Section */}
           <div className="lg:w-1/3 relative md:py-10 py-3 md:px-6 px-2 flex justify-center items-center  overflow-hidden">
@@ -34,7 +40,7 @@ const BookDetailsPage = () => {
             <p className="mt-2 text-lg text-gray-600">
               By: {book.authors[0].name} ({book.authors[0].birth_year} - {book.authors[0].death_year})
             </p>
-<div className='flex justify-between items-start lg:flex-row flex-col w-full gap-4'>
+          <div className='flex justify-between items-start lg:flex-row flex-col w-full gap-4'>
 
             {/* Book Details */}
             <div className="mt-6 flex-1 ">
@@ -67,7 +73,7 @@ const BookDetailsPage = () => {
                 ))}
               </ul>
             </div>
-</div>
+          </div>
 
 
             {/* Download Count */}
