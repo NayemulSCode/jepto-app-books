@@ -38,14 +38,14 @@ navigate("/book-details", {state:{bookObj}})
 
       <div onClick={gotoBooksDetails} className=" flex flex-col flex-grow   cursor-pointer">
         <div className='flex flex-col justify-end  '>
-            <h4 className="text-lg font-bold lg:text-xl min-h-14 text-blue-700">{name}</h4>
-            <div className="flex justify-between items-center">
-              <p className="text-xs lg:text-sm">By : <span className='font-medium '>{author}</span></p>
+            <h4 className="text-lg font-bold lg:text-xl min-h-14 text-blue-700  ">{name}</h4>
+            <div className="flex justify-between items-start ">
+              <p className="text-xs lg:text-sm min-h-12">By : <span className='font-medium '>{author}</span></p>
               <p className="text-xs lg:text-sm">Id : <span>{id}</span></p>
             </div>
         </div>
 
-<div className='flex-grow flex flex-col justify-between gap-6 mt-4'>
+<div className='flex-grow flex flex-col justify-between gap-6  '>
         <p className="text-xs lg:text-sm text-balance">Genre: {genre}</p>
 
         <div className="flex items-center gap-3 text-xs lg:text-sm">

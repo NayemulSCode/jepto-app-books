@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default function Navbar() {
   return (
     <nav className="py-6 bg-[#1a73e8] text-white">
-      <div className="container mx-auto flex items-center justify-between gap-x-6 max-w-7xl">
+      <div className="container mx-auto flex items-center justify-between gap-x-6 max-w-7xl px-4 xl:px-0">
         <Link className="font-bold text-3xl italic" to="/">
             Jepto Books
         </Link>
